@@ -91,37 +91,34 @@ sheryians.forEach((elem) => {
     htmlTag += `<p id="type1">${elem.tag}</p>`;
   }
 
-  sum += `  <div class="selection">
-        <div class="main-card">
-          <div class="card">
-            <div class="image-part">
-              <img src="./images/dataScience.webp" alt="" />
-            </div>
+  sum += ` 
+         <div class="card">
+        <div class="image-part">
+          <img src="${elem.image}" alt="" />
+        </div>
 
-            <div class="text-part">
-              <h3>2.0 Job Ready AI Powered Cohort: Web + DSA + Aplitude</h3>
-              <div class="type">
-                <p id="type2">Live Batch</p>
-                <p id="type1">Hinglish</p>
-              </div>
-            </div>
-
-            <div class="price">
-              <p>Limited Time Discount</p>
-              <div class="tags">
-                <p id="tags1">₹6999 (+GST)</p>
-                <p id="tags2">₹9999</p>
-                <p id="tags3">53% OFF</p>
-              </div>
-            </div>
+        <div class="text-part">
+          <h3>${elem.name}</h3>
+          <div class="type">
+            ${htmlTag}
           </div>
         </div>
-        <div class="detail">
-          <button>View Detail</button>
+
+        <div class="price">
+          <p>${elem.words}</p>
+          <div class="tags">
+            <p id="tags1">${elem.price} (+GST)</p>
+            <p id="tags2">${elem.originalPrice}</p>
+            <p id="tags3">${elem.discountPercentage}OFF</p>
+          </div>
         </div>
-        </div>   
+         <div class="detail">
+        <button>View Detail</button>
+      </div>
+      </div>
+       
           `;
 });
 
-var mainCard = document.querySelector(".selection");
+var mainCard = document.querySelector(".main");
 mainCard.innerHTML = sum;
